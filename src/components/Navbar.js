@@ -11,28 +11,30 @@ const Navbar = () => {
 
   return (
     <div className="navContainer">
-            <div className="details">
-        <Icon fill="#ffffff" size={20} svg="twitter"/>
-     </div>
-     <Link to="/" className="">
+           
+        <Icon fill="#ffffff" size={33} svg="twitter"/>
+         <div className="container_nav">
+       <Link to="/" className="">
      <div className="">
-        <Icon fill="#ffffff" size={20} svg="list"/>
+        <Icon fill="#ffffff" size={23} svg="list"/>
        
      </div>
      </Link>
      <Link to="/profile" className="">
      <div className="">
-        <Icon fill="#ffffff" size={20} svg="user"/>
+        <Icon fill="#ffffff" size={23} svg="user"/>
       
      </div>
      </Link>
      <Link to="/settings" className="">
      <div className="">
-        <Icon fill="#ffffff" size={20} svg="cog"/>
+        <Icon fill="#ffffff" size={23} svg="cog"/>
        
      </div>
      </Link>
-     <div className="logout" style={{backgroundColor: '#ffffff',padding:5,borderRadius:5,cursor:"pointer"}} onClick={()=>{Moralis.User.logOut().then(()=>{window.location.reload();})}}>Logout</div>
+         </div>
+    
+     <div className="logout"  onClick={()=>{Moralis.User.logOut().then(()=>{window.location.reload();})}}>Logout</div>
 
     </div>
   )

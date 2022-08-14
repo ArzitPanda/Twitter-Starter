@@ -17,6 +17,7 @@
 
 .trend{
     display:flex;
+    flex-direction: column;
     justify-content: start;
     align-items: center;
     gap:20px;
@@ -35,8 +36,11 @@
 }
 
 .trendText {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: normal;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
 }
 
 .more {

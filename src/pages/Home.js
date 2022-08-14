@@ -134,7 +134,7 @@ onError:(error)=>console.log(error.data.message)
             <TextArea
             label=""
             name="tweetextarea"
-            value="hello arz"
+            value="hello user"
             type="text"
             width="95%"
               onChange={(e)=>setTweet(e.target.value)}

@@ -17,6 +17,7 @@ const App = () => {
 
   return (
   <>
+  <div className="feedTweet1">dev by arz,this is not a real site.{"  "} based on rinkeby testnet 🧡(bestviewed on desktop)</div>
         {isAuthenticated ?(
     <div className="page">
          <div className="sideBar">

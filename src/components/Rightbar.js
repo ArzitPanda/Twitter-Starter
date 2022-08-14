@@ -6,9 +6,27 @@ import academy from "../images/academy.png";
 import youtube from "../images/youtube.png";
 import js from "../images/js.png";
 import {Input} from "web3uikit";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const Rightbar = () => {
+const[search,setSearch] =useState("twitter");
+const[searcharr,setSearchArr] =useState([]);
+
+useEffect(() => {
+ const newsFetch =async ()=>{
+
+  const data= await fetch(`https://newsapi.org/v2/everything?q=${search}&sortBy=popularity&apiKey=7c17fbb17b284775beb5c74048b9a6cf`)
+      data.json().then(res=>{console.table(res.articles.slice(0,5));setSearchArr(res.articles.slice(0,3))});
+
+ }
+ newsFetch();
+
+ 
+}, [search])
+
+
   const trends = [
     {
       img: spaceshooter,
@@ -45,20 +63,20 @@ const Rightbar = () => {
           name="search Twitter"
           prefixIcon="search"
           labelBgColor="#141d26"
-
+          onChange={(e)=>setSearch(e.target.value)}
 
       ></Input>
         <div className="trends">
           News For you
-          {trends.map((ele,key)=>{
+          {searcharr.map((ele,key)=>{
             return(
             
             
             < >
-              <div className="trend" onClick={()=>window.open(ele.link)
+              <div className="trend" onClick={()=>window.open(ele.url)
               }>
-                <img src={ele.img} className="trendImg"/>
-                <div className="trendText">{ele.text}</div>
+                <img src={ele.urlToImage} className="trendImg"/>
+                <div className="trendText">{ele.title}</div>
 
               </div>
           
