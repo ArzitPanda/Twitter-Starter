@@ -6,6 +6,7 @@ import TweetInFeed from "../components/TweetInFeed"
 import {TextArea,Icon} from "web3uikit";
 import {useState,useRef} from "react";
 import { useMoralis,useWeb3ExecuteFunction } from "react-moralis";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
 
@@ -124,6 +125,7 @@ onError:(error)=>console.log(error.data.message)
 
   return (
     <>
+    <Navbar/>
     <div className="pageIdentify">Home</div>
      <div className="mainContent">
         <div className="profileTweet">

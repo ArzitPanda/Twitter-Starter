@@ -10,6 +10,7 @@ import pfp5 from "../images/pfp5.png"
 import { useRef } from "react";
 import { defaultImgs } from "../defaultimgs";
 import { useMoralis } from "react-moralis";
+import Navbar from "../components/Navbar";
 const Settings = () => {
   
   const {isAuthenticated,Moralis} =useMoralis();
@@ -63,6 +64,7 @@ const saveEdits = async ()=>{
 
   return (
     <>
+      <Navbar/>
     <div className="pageIdentify">Settings</div>
     <div className="settingsPage">
         <Input

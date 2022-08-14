@@ -4,6 +4,7 @@ import TweetInFeed from "../components/TweetInFeed";
 import { defaultImgs } from "../defaultimgs";
 import './Profile.css';
 import { useMoralis } from "react-moralis";
+import Navbar from "../components/Navbar";
 
 const Profile = () => {
   
@@ -11,6 +12,7 @@ const Profile = () => {
   const user =Moralis.User.current();
   return (
     <>
+      <Navbar/>
     <div className="pageIdentify">Profile</div>
     <img src={user.attributes.banner?user.attributes.banner:defaultImgs[1]} className="profileBanner"/>
     <div className="pfpContainer">
